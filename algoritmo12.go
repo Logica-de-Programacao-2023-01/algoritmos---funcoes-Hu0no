@@ -24,10 +24,10 @@ func FindMinMaxAverage(numbers []int) (int, int, float64, error) {
 			minimo = float64(valorMin)
 		}
 	}
-	media = (soma - float64(minimo) - float64(maximo)/(denominador-2))
+	media = (soma / (denominador))
 	return int(maximo), int(minimo), media, nil
 }
 func main() {
-	slice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	slice := []int{}
 	fmt.Print(FindMinMaxAverage(slice))
 }
