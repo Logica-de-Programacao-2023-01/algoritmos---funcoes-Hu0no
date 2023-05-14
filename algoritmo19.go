@@ -10,18 +10,23 @@ func algoritmo19(x int) ([]int, error) {
 	if x == 1 || x == 0 {
 		return y, nil
 	} else {
-		z := 1
+		z := 2
+		d := 1
 		divisores := 0
-			for z <= x {
-				if x%z == 0 {
+		for z <= x {
+			divisores = 0
+			d = 1
+			for d <= z {
+				if z%d == 0 {
 					divisores += 1
 				}
-				z++
+				d++
 			}
-
+			if divisores == 2 {
+				y = append(y, z)
+			}
+			z++
 		}
+		return y, nil
 	}
-}
-func main() {
-	x := 5
 }
